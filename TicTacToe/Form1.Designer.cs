@@ -29,121 +29,139 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicTacToeForm));
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbBox9 = new System.Windows.Forms.PictureBox();
+            this.pbBox6 = new System.Windows.Forms.PictureBox();
+            this.pbBox3 = new System.Windows.Forms.PictureBox();
+            this.pbBox8 = new System.Windows.Forms.PictureBox();
+            this.pbBox5 = new System.Windows.Forms.PictureBox();
+            this.pbBox2 = new System.Windows.Forms.PictureBox();
+            this.pbBox7 = new System.Windows.Forms.PictureBox();
+            this.pbBox4 = new System.Windows.Forms.PictureBox();
+            this.pbBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblTurnName = new System.Windows.Forms.Label();
             this.lblTurn = new System.Windows.Forms.Label();
             this.lblWinner = new System.Windows.Forms.Label();
             this.lblWinnerName = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox7
+            // pbBox9
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(841, 360);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(140, 134);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 8;
-            this.pictureBox7.TabStop = false;
+            this.pbBox9.Image = ((System.Drawing.Image)(resources.GetObject("pbBox9.Image")));
+            this.pbBox9.Location = new System.Drawing.Point(841, 360);
+            this.pbBox9.Name = "pbBox9";
+            this.pbBox9.Size = new System.Drawing.Size(140, 134);
+            this.pbBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBox9.TabIndex = 8;
+            this.pbBox9.TabStop = false;
+            this.pbBox9.Tag = "9";
+            this.pbBox9.Click += new System.EventHandler(this.pbBox9_Click);
             // 
-            // pictureBox8
+            // pbBox6
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(841, 209);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(140, 134);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 7;
-            this.pictureBox8.TabStop = false;
+            this.pbBox6.Image = ((System.Drawing.Image)(resources.GetObject("pbBox6.Image")));
+            this.pbBox6.Location = new System.Drawing.Point(841, 209);
+            this.pbBox6.Name = "pbBox6";
+            this.pbBox6.Size = new System.Drawing.Size(140, 134);
+            this.pbBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBox6.TabIndex = 7;
+            this.pbBox6.TabStop = false;
+            this.pbBox6.Tag = "6";
+            this.pbBox6.Click += new System.EventHandler(this.pbBox6_Click);
             // 
-            // pictureBox9
+            // pbBox3
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(841, 55);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(140, 134);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
+            this.pbBox3.Image = global::TicTacToe.Properties.Resources.QuestionMark;
+            this.pbBox3.Location = new System.Drawing.Point(841, 55);
+            this.pbBox3.Name = "pbBox3";
+            this.pbBox3.Size = new System.Drawing.Size(140, 134);
+            this.pbBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBox3.TabIndex = 6;
+            this.pbBox3.TabStop = false;
+            this.pbBox3.Tag = "3";
+            this.pbBox3.Click += new System.EventHandler(this.pbBox3_Click);
             // 
-            // pictureBox4
+            // pbBox8
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(666, 360);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(140, 134);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.pbBox8.Image = ((System.Drawing.Image)(resources.GetObject("pbBox8.Image")));
+            this.pbBox8.Location = new System.Drawing.Point(666, 360);
+            this.pbBox8.Name = "pbBox8";
+            this.pbBox8.Size = new System.Drawing.Size(140, 134);
+            this.pbBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBox8.TabIndex = 5;
+            this.pbBox8.TabStop = false;
+            this.pbBox8.Tag = "8";
+            this.pbBox8.Click += new System.EventHandler(this.pbBox8_Click);
             // 
-            // pictureBox5
+            // pbBox5
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(666, 209);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(140, 134);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
+            this.pbBox5.Image = ((System.Drawing.Image)(resources.GetObject("pbBox5.Image")));
+            this.pbBox5.Location = new System.Drawing.Point(666, 209);
+            this.pbBox5.Name = "pbBox5";
+            this.pbBox5.Size = new System.Drawing.Size(140, 134);
+            this.pbBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBox5.TabIndex = 4;
+            this.pbBox5.TabStop = false;
+            this.pbBox5.Tag = "5";
+            this.pbBox5.Click += new System.EventHandler(this.pbBox5_Click);
             // 
-            // pictureBox6
+            // pbBox2
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(666, 55);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(140, 134);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 3;
-            this.pictureBox6.TabStop = false;
+            this.pbBox2.Image = ((System.Drawing.Image)(resources.GetObject("pbBox2.Image")));
+            this.pbBox2.Location = new System.Drawing.Point(666, 55);
+            this.pbBox2.Name = "pbBox2";
+            this.pbBox2.Size = new System.Drawing.Size(140, 134);
+            this.pbBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBox2.TabIndex = 3;
+            this.pbBox2.TabStop = false;
+            this.pbBox2.Tag = "2";
+            this.pbBox2.Click += new System.EventHandler(this.pbBox2_Click);
             // 
-            // pictureBox3
+            // pbBox7
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(485, 360);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(140, 134);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.pbBox7.Image = ((System.Drawing.Image)(resources.GetObject("pbBox7.Image")));
+            this.pbBox7.Location = new System.Drawing.Point(485, 360);
+            this.pbBox7.Name = "pbBox7";
+            this.pbBox7.Size = new System.Drawing.Size(140, 134);
+            this.pbBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBox7.TabIndex = 2;
+            this.pbBox7.TabStop = false;
+            this.pbBox7.Tag = "7";
+            this.pbBox7.Click += new System.EventHandler(this.pbBox7_Click);
             // 
-            // pictureBox2
+            // pbBox4
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(485, 209);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(140, 134);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.pbBox4.Image = ((System.Drawing.Image)(resources.GetObject("pbBox4.Image")));
+            this.pbBox4.Location = new System.Drawing.Point(485, 209);
+            this.pbBox4.Name = "pbBox4";
+            this.pbBox4.Size = new System.Drawing.Size(140, 134);
+            this.pbBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBox4.TabIndex = 1;
+            this.pbBox4.TabStop = false;
+            this.pbBox4.Tag = "4";
+            this.pbBox4.Click += new System.EventHandler(this.pbBox4_Click);
             // 
-            // pictureBox1
+            // pbBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(485, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 134);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbBox1.Image = ((System.Drawing.Image)(resources.GetObject("pbBox1.Image")));
+            this.pbBox1.Location = new System.Drawing.Point(485, 55);
+            this.pbBox1.Name = "pbBox1";
+            this.pbBox1.Size = new System.Drawing.Size(140, 134);
+            this.pbBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBox1.TabIndex = 0;
+            this.pbBox1.TabStop = false;
+            this.pbBox1.Tag = "1";
+            this.pbBox1.Click += new System.EventHandler(this.pbBox1_Click);
             // 
             // lblTitle
             // 
@@ -217,6 +235,7 @@
             this.btnRestart.TabIndex = 14;
             this.btnRestart.Text = "Restart Game";
             this.btnRestart.UseVisualStyleBackColor = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // TicTacToeForm
             // 
@@ -230,27 +249,27 @@
             this.Controls.Add(this.lblTurn);
             this.Controls.Add(this.lblTurnName);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbBox9);
+            this.Controls.Add(this.pbBox6);
+            this.Controls.Add(this.pbBox3);
+            this.Controls.Add(this.pbBox8);
+            this.Controls.Add(this.pbBox5);
+            this.Controls.Add(this.pbBox2);
+            this.Controls.Add(this.pbBox7);
+            this.Controls.Add(this.pbBox4);
+            this.Controls.Add(this.pbBox1);
             this.Name = "TicTacToeForm";
             this.Text = "Tic-Tac-Toe Game";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TicTacToeForm_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,15 +277,15 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pbBox1;
+        private System.Windows.Forms.PictureBox pbBox4;
+        private System.Windows.Forms.PictureBox pbBox7;
+        private System.Windows.Forms.PictureBox pbBox8;
+        private System.Windows.Forms.PictureBox pbBox5;
+        private System.Windows.Forms.PictureBox pbBox2;
+        private System.Windows.Forms.PictureBox pbBox9;
+        private System.Windows.Forms.PictureBox pbBox6;
+        private System.Windows.Forms.PictureBox pbBox3;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblTurnName;
         private System.Windows.Forms.Label lblTurn;
