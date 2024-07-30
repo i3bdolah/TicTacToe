@@ -81,9 +81,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\questionmark_83826.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\QuestionMark.png" />
   </ItemGroup>
   <ItemGroup>

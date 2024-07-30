@@ -19,8 +19,9 @@ namespace TicTacToe
         }
 
         private bool IsFirstPlayerTurn = true;
-        private Byte NumOfClicks = 0;
         private string[] Result = new string[9];
+        private Byte Clicks_Counter = 0;
+
         private void TicTacToeForm_Paint(object sender, PaintEventArgs e)
         {
             Color MyColor = Color.Black;
@@ -44,8 +45,12 @@ namespace TicTacToe
                 lblTurnName.Text = "Player 1";
                 lblWinnerName.Text = "Player 1";
             }
-            lblTurnName.Text = "Player 2";
-            lblWinnerName.Text = "Player 2";
+            else
+            {
+                lblTurnName.Text = "Player 2";
+                lblWinnerName.Text = "Player 2";
+            }
+            lblWinnerName.ForeColor = Color.DarkGreen;
 
             pbBox1.Enabled = false;
             pbBox2.Enabled = false;
@@ -61,6 +66,7 @@ namespace TicTacToe
         private void Draw_Operation()
         {
             lblWinnerName.Text = "Draw";
+            lblWinnerName.ForeColor= Color.DarkGray;
 
             pbBox1.Enabled = false;
             pbBox2.Enabled = false;
@@ -75,7 +81,7 @@ namespace TicTacToe
 
         private void Evaluate_Result(Byte BoxNumber, string Sign)
         {
-            if (NumOfClicks > 9)
+            if (Clicks_Counter > 9)
             {
                 return;
             }
@@ -85,23 +91,25 @@ namespace TicTacToe
             // Game Logic
 
             // X-axis Possibilities
-            if ((Result[0] == Sign) & (Result[1] == Sign) & (Result[2] == Sign)) { Winner_Operation(); }
-            else if ((Result[3] == Sign) & (Result[4] == Sign) & (Result[5] == Sign)) { Winner_Operation(); }
-            else if ((Result[6] == Sign) & (Result[7] == Sign) & (Result[8] == Sign)) { Winner_Operation(); }
+            if ((Result[0] == Sign) & (Result[1] == Sign) & (Result[2] == Sign)) { Winner_Operation(); return; }
+            if ((Result[3] == Sign) & (Result[4] == Sign) & (Result[5] == Sign)) { Winner_Operation(); return; }
+            if ((Result[6] == Sign) & (Result[7] == Sign) & (Result[8] == Sign)) { Winner_Operation(); return; }
 
             // Y-axis Possibilities
-            else if ((Result[0] == Sign) & (Result[3] == Sign) & (Result[6] == Sign)) { Winner_Operation(); }
-            else if ((Result[1] == Sign) & (Result[4] == Sign) & (Result[7] == Sign)) { Winner_Operation(); }
-            else if ((Result[2] == Sign) & (Result[5] == Sign) & (Result[8] == Sign)) { Winner_Operation(); }
+            if ((Result[0] == Sign) & (Result[3] == Sign) & (Result[6] == Sign)) { Winner_Operation(); return; }
+            if ((Result[1] == Sign) & (Result[4] == Sign) & (Result[7] == Sign)) { Winner_Operation(); return; }
+            if ((Result[2] == Sign) & (Result[5] == Sign) & (Result[8] == Sign)) { Winner_Operation(); return; }
 
             // Diagonal Possibilities
-            else if ((Result[0] == Sign) & (Result[4] == Sign) & (Result[8] == Sign)) { Winner_Operation(); }
-            else if ((Result[2] == Sign) & (Result[4] == Sign) & (Result[6] == Sign)) { Winner_Operation(); }
+            if ((Result[0] == Sign) & (Result[4] == Sign) & (Result[8] == Sign)) { Winner_Operation(); return; }
+            if ((Result[2] == Sign) & (Result[4] == Sign) & (Result[6] == Sign)) { Winner_Operation(); return; }
+
+            if (Clicks_Counter == 9) { Draw_Operation(); }
         }
 
         private void All_pbBox_Clicks(object sender, EventArgs e)
         {
-            NumOfClicks++;
+            Clicks_Counter++;
             PictureBox CurrentPb = (PictureBox)sender;
 
             //if (CurrentPb.Image != Resources.QuestionMark)
@@ -151,8 +159,11 @@ namespace TicTacToe
 
             IsFirstPlayerTurn = true;
             lblTurnName.Text = "Player 1";
-            lblWinner.Text = "In Progress";
+            lblWinnerName.Text = "In Progress";
+            lblWinnerName.ForeColor = Color.Blue;
 
+            Result = new string[9];
+            Clicks_Counter = 0;
         }
 
         private void pbBox1_Click(object sender, EventArgs e)
