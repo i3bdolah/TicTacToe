@@ -57,6 +57,7 @@
             // 
             // pbBox9
             // 
+            this.pbBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBox9.Image = ((System.Drawing.Image)(resources.GetObject("pbBox9.Image")));
             this.pbBox9.Location = new System.Drawing.Point(841, 360);
             this.pbBox9.Name = "pbBox9";
@@ -64,11 +65,12 @@
             this.pbBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBox9.TabIndex = 8;
             this.pbBox9.TabStop = false;
-            this.pbBox9.Tag = "9";
-            this.pbBox9.Click += new System.EventHandler(this.pbBox9_Click);
+            this.pbBox9.Tag = "?";
+            this.pbBox9.Click += new System.EventHandler(this.pbBox_all_Click);
             // 
             // pbBox6
             // 
+            this.pbBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBox6.Image = ((System.Drawing.Image)(resources.GetObject("pbBox6.Image")));
             this.pbBox6.Location = new System.Drawing.Point(841, 209);
             this.pbBox6.Name = "pbBox6";
@@ -76,11 +78,12 @@
             this.pbBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBox6.TabIndex = 7;
             this.pbBox6.TabStop = false;
-            this.pbBox6.Tag = "6";
-            this.pbBox6.Click += new System.EventHandler(this.pbBox6_Click);
+            this.pbBox6.Tag = "?";
+            this.pbBox6.Click += new System.EventHandler(this.pbBox_all_Click);
             // 
             // pbBox3
             // 
+            this.pbBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBox3.Image = global::TicTacToe.Properties.Resources.QuestionMark;
             this.pbBox3.Location = new System.Drawing.Point(841, 55);
             this.pbBox3.Name = "pbBox3";
@@ -88,11 +91,12 @@
             this.pbBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBox3.TabIndex = 6;
             this.pbBox3.TabStop = false;
-            this.pbBox3.Tag = "3";
-            this.pbBox3.Click += new System.EventHandler(this.pbBox3_Click);
+            this.pbBox3.Tag = "?";
+            this.pbBox3.Click += new System.EventHandler(this.pbBox_all_Click);
             // 
             // pbBox8
             // 
+            this.pbBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBox8.Image = ((System.Drawing.Image)(resources.GetObject("pbBox8.Image")));
             this.pbBox8.Location = new System.Drawing.Point(666, 360);
             this.pbBox8.Name = "pbBox8";
@@ -100,11 +104,12 @@
             this.pbBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBox8.TabIndex = 5;
             this.pbBox8.TabStop = false;
-            this.pbBox8.Tag = "8";
-            this.pbBox8.Click += new System.EventHandler(this.pbBox8_Click);
+            this.pbBox8.Tag = "?";
+            this.pbBox8.Click += new System.EventHandler(this.pbBox_all_Click);
             // 
             // pbBox5
             // 
+            this.pbBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBox5.Image = ((System.Drawing.Image)(resources.GetObject("pbBox5.Image")));
             this.pbBox5.Location = new System.Drawing.Point(666, 209);
             this.pbBox5.Name = "pbBox5";
@@ -112,11 +117,12 @@
             this.pbBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBox5.TabIndex = 4;
             this.pbBox5.TabStop = false;
-            this.pbBox5.Tag = "5";
-            this.pbBox5.Click += new System.EventHandler(this.pbBox5_Click);
+            this.pbBox5.Tag = "?";
+            this.pbBox5.Click += new System.EventHandler(this.pbBox_all_Click);
             // 
             // pbBox2
             // 
+            this.pbBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBox2.Image = ((System.Drawing.Image)(resources.GetObject("pbBox2.Image")));
             this.pbBox2.Location = new System.Drawing.Point(666, 55);
             this.pbBox2.Name = "pbBox2";
@@ -124,11 +130,12 @@
             this.pbBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBox2.TabIndex = 3;
             this.pbBox2.TabStop = false;
-            this.pbBox2.Tag = "2";
-            this.pbBox2.Click += new System.EventHandler(this.pbBox2_Click);
+            this.pbBox2.Tag = "?";
+            this.pbBox2.Click += new System.EventHandler(this.pbBox_all_Click);
             // 
             // pbBox7
             // 
+            this.pbBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBox7.Image = ((System.Drawing.Image)(resources.GetObject("pbBox7.Image")));
             this.pbBox7.Location = new System.Drawing.Point(485, 360);
             this.pbBox7.Name = "pbBox7";
@@ -136,11 +143,12 @@
             this.pbBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBox7.TabIndex = 2;
             this.pbBox7.TabStop = false;
-            this.pbBox7.Tag = "7";
-            this.pbBox7.Click += new System.EventHandler(this.pbBox7_Click);
+            this.pbBox7.Tag = "?";
+            this.pbBox7.Click += new System.EventHandler(this.pbBox_all_Click);
             // 
             // pbBox4
             // 
+            this.pbBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBox4.Image = ((System.Drawing.Image)(resources.GetObject("pbBox4.Image")));
             this.pbBox4.Location = new System.Drawing.Point(485, 209);
             this.pbBox4.Name = "pbBox4";
@@ -148,11 +156,12 @@
             this.pbBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBox4.TabIndex = 1;
             this.pbBox4.TabStop = false;
-            this.pbBox4.Tag = "4";
-            this.pbBox4.Click += new System.EventHandler(this.pbBox4_Click);
+            this.pbBox4.Tag = "?";
+            this.pbBox4.Click += new System.EventHandler(this.pbBox_all_Click);
             // 
             // pbBox1
             // 
+            this.pbBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBox1.Image = ((System.Drawing.Image)(resources.GetObject("pbBox1.Image")));
             this.pbBox1.Location = new System.Drawing.Point(485, 55);
             this.pbBox1.Name = "pbBox1";
@@ -160,12 +169,11 @@
             this.pbBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBox1.TabIndex = 0;
             this.pbBox1.TabStop = false;
-            this.pbBox1.Tag = "1";
-            this.pbBox1.Click += new System.EventHandler(this.pbBox1_Click);
+            this.pbBox1.Tag = "?";
+            this.pbBox1.Click += new System.EventHandler(this.pbBox_all_Click);
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblTitle.Location = new System.Drawing.Point(21, 55);
@@ -177,48 +185,44 @@
             // 
             // lblTurnName
             // 
-            this.lblTurnName.AutoSize = true;
-            this.lblTurnName.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurnName.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTurnName.ForeColor = System.Drawing.Color.Blue;
-            this.lblTurnName.Location = new System.Drawing.Point(139, 221);
+            this.lblTurnName.Location = new System.Drawing.Point(30, 209);
             this.lblTurnName.Name = "lblTurnName";
-            this.lblTurnName.Size = new System.Drawing.Size(174, 46);
+            this.lblTurnName.Size = new System.Drawing.Size(416, 46);
             this.lblTurnName.TabIndex = 10;
             this.lblTurnName.Text = "Player 1";
             this.lblTurnName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTurn
             // 
-            this.lblTurn.AutoSize = true;
             this.lblTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTurn.ForeColor = System.Drawing.Color.SlateGray;
-            this.lblTurn.Location = new System.Drawing.Point(169, 158);
+            this.lblTurn.Location = new System.Drawing.Point(30, 158);
             this.lblTurn.Name = "lblTurn";
-            this.lblTurn.Size = new System.Drawing.Size(105, 46);
+            this.lblTurn.Size = new System.Drawing.Size(416, 46);
             this.lblTurn.TabIndex = 11;
             this.lblTurn.Text = "Turn";
             this.lblTurn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWinner
             // 
-            this.lblWinner.AutoSize = true;
             this.lblWinner.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWinner.ForeColor = System.Drawing.Color.SlateGray;
-            this.lblWinner.Location = new System.Drawing.Point(148, 297);
+            this.lblWinner.Location = new System.Drawing.Point(30, 297);
             this.lblWinner.Name = "lblWinner";
-            this.lblWinner.Size = new System.Drawing.Size(152, 46);
+            this.lblWinner.Size = new System.Drawing.Size(416, 46);
             this.lblWinner.TabIndex = 13;
             this.lblWinner.Text = "Winner";
             this.lblWinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWinnerName
             // 
-            this.lblWinnerName.AutoSize = true;
-            this.lblWinnerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWinnerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWinnerName.ForeColor = System.Drawing.Color.Blue;
-            this.lblWinnerName.Location = new System.Drawing.Point(107, 360);
+            this.lblWinnerName.Location = new System.Drawing.Point(30, 348);
             this.lblWinnerName.Name = "lblWinnerName";
-            this.lblWinnerName.Size = new System.Drawing.Size(234, 46);
+            this.lblWinnerName.Size = new System.Drawing.Size(416, 46);
             this.lblWinnerName.TabIndex = 12;
             this.lblWinnerName.Text = "In Progress";
             this.lblWinnerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -229,9 +233,9 @@
             this.btnRestart.FlatAppearance.BorderSize = 0;
             this.btnRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestart.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRestart.Location = new System.Drawing.Point(87, 435);
+            this.btnRestart.Location = new System.Drawing.Point(30, 435);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(268, 59);
+            this.btnRestart.Size = new System.Drawing.Size(416, 59);
             this.btnRestart.TabIndex = 14;
             this.btnRestart.Text = "Restart Game";
             this.btnRestart.UseVisualStyleBackColor = false;
@@ -271,7 +275,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

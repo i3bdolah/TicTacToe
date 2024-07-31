@@ -18,9 +18,24 @@ namespace TicTacToe
             InitializeComponent();
         }
 
-        private bool IsFirstPlayerTurn = true;
-        private string[] Result = new string[9];
-        private Byte Clicks_Counter = 0;
+        stGameStatus GameStatus;
+        bool IsFirstPlayerTurn = true;
+
+        enum enWinner
+        {
+            Player1,
+            Player2,
+            Draw,
+            GameInProgress
+        }
+
+        struct stGameStatus
+        {
+            public enWinner Winner;
+            public bool GameOver;
+            public short PlayCount;
+
+        }
 
         private void TicTacToeForm_Paint(object sender, PaintEventArgs e)
         {
@@ -38,177 +53,181 @@ namespace TicTacToe
             e.Graphics.DrawLine(MyPen, 825, 20, 825, 500);
         }
 
-        private void Winner_Operation()
+        public bool CheckValues(PictureBox pb1, PictureBox pb2, PictureBox pb3)
         {
-            if (IsFirstPlayerTurn)
+            if (pb1.Tag.ToString() != "?" && pb1.Tag.ToString() == pb2.Tag.ToString() && pb1.Tag.ToString() == pb3.Tag.ToString())
             {
-                lblTurnName.Text = "Player 1";
-                lblWinnerName.Text = "Player 1";
-            }
-            else
-            {
-                lblTurnName.Text = "Player 2";
-                lblWinnerName.Text = "Player 2";
-            }
-            lblWinnerName.ForeColor = Color.DarkGreen;
+                pb1.BackColor = Color.GreenYellow;
+                pb2.BackColor = Color.GreenYellow;
+                pb3.BackColor = Color.GreenYellow;
 
-            pbBox1.Enabled = false;
-            pbBox2.Enabled = false;
-            pbBox3.Enabled = false;
-            pbBox4.Enabled = false;
-            pbBox5.Enabled = false;
-            pbBox6.Enabled = false;
-            pbBox7.Enabled = false;
-            pbBox8.Enabled = false;
-            pbBox9.Enabled = false;
+                if (pb1.Tag.ToString() == "X")
+                {
+                    GameStatus.Winner = enWinner.Player1;
+                    GameStatus.GameOver = true;
+                    EndGame();
+                    return true;
+                }
+                else
+                {
+                    GameStatus.Winner = enWinner.Player2;
+                    GameStatus.GameOver = true;
+                    EndGame();
+                    return true;
+                }
+            }
+
+            GameStatus.GameOver = false;
+            return false;
         }
 
-        private void Draw_Operation()
+        void EnableOrDisablePb(bool value)
         {
-            lblWinnerName.Text = "Draw";
-            lblWinnerName.ForeColor= Color.DarkGray;
-
-            pbBox1.Enabled = false;
-            pbBox2.Enabled = false;
-            pbBox3.Enabled = false;
-            pbBox4.Enabled = false;
-            pbBox5.Enabled = false;
-            pbBox6.Enabled = false;
-            pbBox7.Enabled = false;
-            pbBox8.Enabled = false;
-            pbBox9.Enabled = false;
+            pbBox1.Enabled = value;
+            pbBox2.Enabled = value;
+            pbBox3.Enabled = value;
+            pbBox4.Enabled = value;
+            pbBox5.Enabled = value;
+            pbBox6.Enabled = value;
+            pbBox7.Enabled = value;
+            pbBox8.Enabled = value;
+            pbBox9.Enabled = value;
         }
 
-        private void Evaluate_Result(Byte BoxNumber, string Sign)
+        void EndGame()
         {
-            if (Clicks_Counter > 9)
+
+            lblTurnName.Text = "Game Over";
+
+            switch (GameStatus.Winner)
             {
+                case enWinner.Player1:
+                    lblWinnerName.Text = "Player 1";
+                    break;
+                case enWinner.Player2:
+                    lblWinnerName.Text = "Player 2";
+                    break;
+                default:
+                    lblWinnerName.Text = "Draw";
+                    break;
+            }
+
+            EnableOrDisablePb(false);
+
+            MessageBox.Show("Game Over", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        public void CheckWinner()
+        {
+            //checked rows
+            //check Row1
+            if (CheckValues(pbBox1, pbBox2, pbBox3))
                 return;
-            }
 
-            Result[BoxNumber - 1] = Sign;
+            //check Row2
+            if (CheckValues(pbBox4, pbBox5, pbBox6))
+                return;
 
-            // Game Logic
+            //check Row3
+            if (CheckValues(pbBox7, pbBox8, pbBox9))
+                return;
 
-            // X-axis Possibilities
-            if ((Result[0] == Sign) & (Result[1] == Sign) & (Result[2] == Sign)) { Winner_Operation(); return; }
-            if ((Result[3] == Sign) & (Result[4] == Sign) & (Result[5] == Sign)) { Winner_Operation(); return; }
-            if ((Result[6] == Sign) & (Result[7] == Sign) & (Result[8] == Sign)) { Winner_Operation(); return; }
+            //checked cols
+            //check col1
+            if (CheckValues(pbBox1, pbBox4, pbBox7))
+                return;
 
-            // Y-axis Possibilities
-            if ((Result[0] == Sign) & (Result[3] == Sign) & (Result[6] == Sign)) { Winner_Operation(); return; }
-            if ((Result[1] == Sign) & (Result[4] == Sign) & (Result[7] == Sign)) { Winner_Operation(); return; }
-            if ((Result[2] == Sign) & (Result[5] == Sign) & (Result[8] == Sign)) { Winner_Operation(); return; }
+            //check col2
+            if (CheckValues(pbBox2, pbBox5, pbBox8))
+                return;
 
-            // Diagonal Possibilities
-            if ((Result[0] == Sign) & (Result[4] == Sign) & (Result[8] == Sign)) { Winner_Operation(); return; }
-            if ((Result[2] == Sign) & (Result[4] == Sign) & (Result[6] == Sign)) { Winner_Operation(); return; }
+            //check col3
+            if (CheckValues(pbBox3, pbBox6, pbBox9))
+                return;
 
-            if (Clicks_Counter == 9) { Draw_Operation(); }
+            //check Diagonal
+
+            //check Diagonal1
+            if (CheckValues(pbBox1, pbBox5, pbBox9))
+                return;
+
+            //check Diagonal2
+            if (CheckValues(pbBox3, pbBox5, pbBox7))
+                return;
         }
 
-        private void All_pbBox_Clicks(object sender, EventArgs e)
+        private void Change_Img(PictureBox ClickedPb)
         {
-            Clicks_Counter++;
-            PictureBox CurrentPb = (PictureBox)sender;
-
-            //if (CurrentPb.Image != Resources.QuestionMark)
-            //{
-            //    MessageBox.Show("This Box is Chosen Before!");
-            //    return;
-            //}
-
-            if (IsFirstPlayerTurn)
+            if (ClickedPb.Tag.ToString() == "?")
             {
-                CurrentPb.Image = Resources.X;
-                Evaluate_Result(Convert.ToByte(CurrentPb.Tag), "X");
-                lblTurnName.Text = "Player 2";
+                if (IsFirstPlayerTurn)
+                {
+                    ClickedPb.Image = Resources.X;
+                    lblTurnName.Text = "Player 2";
+                    GameStatus.PlayCount++;
+                    ClickedPb.Tag = "X";
+                    CheckWinner();
+                }
+                else
+                {
+                    ClickedPb.Image = Resources.O;
+                    lblTurnName.Text = "Player 1";
+                    GameStatus.PlayCount++;
+                    ClickedPb.Tag = "O";
+                    CheckWinner();
+                }
             }
             else
+
             {
-                CurrentPb.Image = Resources.O;
-                Evaluate_Result(Convert.ToByte(CurrentPb.Tag), "O");
-                lblTurnName.Text = "Player 1";
+                MessageBox.Show("Wrong Choice", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            CurrentPb.Enabled = false;
             IsFirstPlayerTurn = !IsFirstPlayerTurn;
+
+
+            if (GameStatus.PlayCount == 9)
+            {
+                GameStatus.GameOver = true;
+                GameStatus.Winner = enWinner.Draw;
+                EndGame();
+            }
+
+        }
+
+        private void RestPb(PictureBox pb)
+        {
+            pb.Image = Resources.QuestionMark;
+            pb.Tag = "?";
+            pb.BackColor = Color.Transparent;
         }
 
         private void btnRestart_Click(object sender, EventArgs e)
         {
-            pbBox1.Image = Resources.QuestionMark;
-            pbBox2.Image = Resources.QuestionMark;
-            pbBox3.Image = Resources.QuestionMark;
-            pbBox4.Image = Resources.QuestionMark;
-            pbBox5.Image = Resources.QuestionMark;
-            pbBox6.Image = Resources.QuestionMark;
-            pbBox7.Image = Resources.QuestionMark;
-            pbBox8.Image = Resources.QuestionMark;
-            pbBox9.Image = Resources.QuestionMark;
+            EnableOrDisablePb(true);
 
-            pbBox1.Enabled = true;
-            pbBox2.Enabled = true;
-            pbBox3.Enabled = true;
-            pbBox4.Enabled = true;
-            pbBox5.Enabled = true;
-            pbBox6.Enabled = true;
-            pbBox7.Enabled = true;
-            pbBox8.Enabled = true;
-            pbBox9.Enabled = true;
+            RestPb(pbBox1);
+            RestPb(pbBox2);
+            RestPb(pbBox3);
+            RestPb(pbBox4);
+            RestPb(pbBox5);
+            RestPb(pbBox6);
+            RestPb(pbBox7);
+            RestPb(pbBox8);
+            RestPb(pbBox9);
 
             IsFirstPlayerTurn = true;
             lblTurnName.Text = "Player 1";
+            GameStatus.PlayCount = 0;
+            GameStatus.GameOver = false;
+            GameStatus.Winner = enWinner.GameInProgress;
             lblWinnerName.Text = "In Progress";
-            lblWinnerName.ForeColor = Color.Blue;
-
-            Result = new string[9];
-            Clicks_Counter = 0;
         }
 
-        private void pbBox1_Click(object sender, EventArgs e)
+        private void pbBox_all_Click(object sender, EventArgs e)
         {
-            All_pbBox_Clicks(sender, e);
-        }
-
-        private void pbBox2_Click(object sender, EventArgs e)
-        {
-            All_pbBox_Clicks(sender, e);
-        }
-
-        private void pbBox3_Click(object sender, EventArgs e)
-        {
-            All_pbBox_Clicks(sender, e);
-        }
-
-        private void pbBox4_Click(object sender, EventArgs e)
-        {
-            All_pbBox_Clicks(sender, e);
-        }
-
-        private void pbBox5_Click(object sender, EventArgs e)
-        {
-            All_pbBox_Clicks(sender, e);
-        }
-
-        private void pbBox6_Click(object sender, EventArgs e)
-        {
-            All_pbBox_Clicks(sender, e);
-        }
-
-        private void pbBox7_Click(object sender, EventArgs e)
-        {
-            All_pbBox_Clicks(sender, e);
-        }
-
-        private void pbBox8_Click(object sender, EventArgs e)
-        {
-            All_pbBox_Clicks(sender, e);
-        }
-
-        private void pbBox9_Click(object sender, EventArgs e)
-        {
-            All_pbBox_Clicks(sender, e);
+            Change_Img((PictureBox)sender);
         }
     }
 }
